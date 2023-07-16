@@ -8,6 +8,7 @@ use App\Models\Presensi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PresensiRequest;
+use Barryvdh\DomPDF\Facade\Pdf;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PresensiController extends Controller
@@ -55,8 +56,8 @@ class PresensiController extends Controller
 
     public function list()
     {
-        $pegawai = Pegawai::where('user_id', Auth::user()->id)->get();
-        $presensi = Presensi::where('pegawai_id', Auth::user()->id)->get();
+        $pegawai    = Pegawai::where('user_id', Auth::user()->id)->get();
+        $presensi   = Presensi::where('pegawai_id', Auth::user()->id)->get();
         return view('pegawai.listpresensi', compact(['pegawai', 'presensi']));
     }
 }

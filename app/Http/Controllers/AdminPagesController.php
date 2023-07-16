@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Pegawai;
 use App\Models\Presensi;
-use App\Charts\AdminChart;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AdminPagesController extends Controller
 {
@@ -19,11 +17,8 @@ class AdminPagesController extends Controller
 
     public function presensi()
     {
-        // $pegawai = Pegawai::where('user_id', Auth::user()->id)->get();
-        // $presensi = Presensi::where('pegawai_id', Auth::user()->id)->get();
-        $pegawai    = Pegawai::all();
-        $presensi   = Presensi::all();
-        return view('admin.listpresensi', compact('presensi', 'pegawai'));
+        $presensi   = Presensi::get();
+        return view('admin.listpresensi', compact(['presensi']));
     }
 
     public function user()
