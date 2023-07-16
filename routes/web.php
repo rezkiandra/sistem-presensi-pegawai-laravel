@@ -3,12 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AdminPagesController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PresensiController;
-use App\Models\Pegawai;
-use App\Models\Presensi;
+use App\Http\Controllers\AdminPagesController;
 
 Route::controller(PagesController::class)->group(function () {
     Route::get('/', 'index');
@@ -27,6 +26,12 @@ Route::controller(AdminPagesController::class)->middleware('auth')->prefix('admi
     Route::get('pegawai', 'pegawai');
     Route::get('presensi', 'presensi');
     Route::get('user', 'user');
+});
+
+Route::controller(LaporanController::class)->middleware('auth')->prefix('admin')->group(function () {
+    Route::get('laporan_pegawai', 'laporan_pegawai')->name('admin.laporan_pegawai');
+    Route::get('laporan_presensi', 'laporan_presensi')->name('admin.laporan_presensi');
+    Route::get('laporan_user', 'laporan_user')->name('admin.laporan_user');
 });
 
 Route::middleware('auth')->group(function () {
