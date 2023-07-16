@@ -14,7 +14,7 @@
             <span class="font-medium">Hello {{ Auth::user()->name }},</span> Anda login sebagai role pegawai.
         </div>
     </div>
-    <div class="bg-white text-gray-900 dark:text-gray-100 dark:bg-gray-400 rounded-lg shadow-md p-3">
+    <div class="bg-white text-gray-900 dark:text-gray-100 dark:bg-gray-300 rounded-lg shadow-md p-3">
         {!! $chart->container() !!}
     </div>
 @endsection
