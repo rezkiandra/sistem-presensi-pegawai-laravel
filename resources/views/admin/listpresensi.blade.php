@@ -50,9 +50,9 @@
                     <th scope="col" class="px-6 py-3">
                         Keterangan
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    {{-- <th scope="col" class="px-6 py-3">
                         Action
-                    </th>
+                    </th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -66,12 +66,13 @@
                             <td class="px-6 py-4">{{ $data->jam_masuk }}</td>
                             <td class="px-6 py-4">{{ $data->jam_keluar }}</td>
                             <td class="px-6 py-4">{{ $data->keterangan }}</td>
-                            <td class="px-6 py-4">
-                                <a href="{{ route('presensi.show', $data->id) }}"
+                            {{-- <td class="px-6 py-4">
+                                <a href="{{ route('presensi.destroy', $data->id) }}"
+                                    onclick="return confirm('Apakah anda yakin ingin hapus data?')"
                                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline uppercase">
-                                    Detail
+                                    Hapus
                                 </a>
-                            </td>
+                            </td> --}}
                         </tr>
                     @elseif ($data->keterangan == 'Sakit')
                         <tr
@@ -82,12 +83,13 @@
                             <td class="px-6 py-4">{{ $data->jam_masuk }}</td>
                             <td class="px-6 py-4">{{ $data->jam_keluar }}</td>
                             <td class="px-6 py-4">{{ $data->keterangan }}</td>
-                            <td class="px-6 py-4">
-                                <a href="{{ route('presensi.show', $data->id) }}"
+                            {{-- <td class="px-6 py-4">
+                                <a href="{{ route('presensi.destroy', $data->id) }}"
+                                    onclick="return confirm('Apakah anda yakin ingin hapus data?')"
                                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline uppercase">
-                                    Detail
+                                    Hapus
                                 </a>
-                            </td>
+                            </td> --}}
                         </tr>
                     @elseif ($data->keterangan == 'Izin')
                         <tr
@@ -98,12 +100,13 @@
                             <td class="px-6 py-4">{{ $data->jam_masuk }}</td>
                             <td class="px-6 py-4">{{ $data->jam_keluar }}</td>
                             <td class="px-6 py-4">{{ $data->keterangan }}</td>
-                            <td class="px-6 py-4">
-                                <a href="{{ route('presensi.show', $data->id) }}"
+                            {{-- <td class="px-6 py-4">
+                                <a href="{{ route('presensi.destroy', $data->id) }}"
+                                    onclick="return confirm('Apakah anda yakin ingin hapus data?')"
                                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline uppercase">
-                                    Detail
+                                    Hapus
                                 </a>
-                            </td>
+                            </td> --}}
                         </tr>
                     @else
                         <tr
@@ -114,12 +117,13 @@
                             <td class="px-6 py-4">{{ $data->jam_masuk }}</td>
                             <td class="px-6 py-4">{{ $data->jam_keluar }}</td>
                             <td class="px-6 py-4">{{ $data->keterangan }}</td>
-                            <td class="px-6 py-4">
-                                <a href="{{ route('presensi.show', $data->id) }}"
+                            {{-- <td class="px-6 py-4">
+                                <a href="{{ route('presensi.destroy', $data->id) }}"
+                                    onclick="return confirm('Apakah anda yakin ingin hapus data?')"
                                     class="font-medium text-blue-600 dark:text-blue-500 hover:underline uppercase">
-                                    Detail
+                                    Hapus
                                 </a>
-                            </td>
+                            </td> --}}
                         </tr>
                     @endif
                 @endforeach

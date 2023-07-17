@@ -53,6 +53,9 @@
                     <th scope="col" class="px-6 py-3">
                         Jenis Kelamin
                     </th>
+                    <th scope="col" class="px-6 py-3">
+                        #
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -66,6 +69,16 @@
                         <td class="px-6 py-4">{{ $pegawai->pangkat }}</td>
                         <td class="px-6 py-4">{{ $pegawai->golongan }}</td>
                         <td class="px-6 py-4">{{ $pegawai->jenkel }}</td>
+                        <td class="px-6 py-4">
+                            <form action="{{ route('admin.destroy', $pegawai->id) }}" method="POST" type="button"
+                                onsubmit="return confirm('Apakah anda yakin ingin delete data pegawai?')">
+                                @csrf
+                                @method('DELETE')
+                                <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline uppercase">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

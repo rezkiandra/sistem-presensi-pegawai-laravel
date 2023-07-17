@@ -42,9 +42,9 @@
                     <th scope="col" class="px-6 py-3">
                         Roles
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    {{-- <th scope="col" class="px-6 py-3">
                         Action
-                    </th>
+                    </th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -55,11 +55,11 @@
                         <td class="px-6 py-4 capitalize">{{ $user->name }}</td>
                         <td class="px-6 py-4">{{ $user->email }}</td>
                         <td class="px-6 py-4">{{ $user->role->name }}</td>
-                        <td class="px-6 py-4">
+                        {{-- <td class="px-6 py-4">
                             <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                 Edit User
                             </a>
-                        </td>
+                        </td> --}}
                     </tr>
                 @endforeach
             </tbody>

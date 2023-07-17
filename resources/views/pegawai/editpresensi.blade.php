@@ -68,7 +68,7 @@
                     <div>
                         <label for="jam_masuk" class="block mb-2 text-2sm font-medium text-gray-900 dark:text-white">Jam
                             Masuk</label>
-                        <input type="time" id="jam_masuk" name="jam_masuk"
+                        <input type="time" id="jam_masuk" name="jam_masuk" disabled
                             value="{{ old('jam_masuk', $presensi->jam_masuk) }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-2sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 hover:cursor-not-allowed">
                     </div>
