@@ -42,6 +42,15 @@ Route::middleware('auth')->prefix('pegawai')->group(function () {
     Route::resource('presensi', PresensiController::class);
 });
 
+Route::controller(AdminController::class)->middleware('auth')->prefix('admin')->group(function () {
+    Route::get('/', 'index');
+    // Route::get('create', 'create')->name('admin.create');
+    // Route::post('create', 'store');
+    Route::get('edit/{id}', 'edit')->name('admin.edit');
+    Route::put('edit/{id}', 'update')->name('admin.update');
+    Route::delete('delete/{id}', 'destroy')->name('admin.destroy');
+});
+
 Route::controller(PegawaiController::class)->middleware('auth')->prefix('pegawai')->group(function () {
     Route::get('/', 'index');
     Route::get('create', 'create')->name('pegawai.create');
