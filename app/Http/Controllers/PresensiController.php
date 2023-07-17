@@ -30,7 +30,7 @@ class PresensiController extends Controller
             'jam_keluar'         => $request->jam_keluar,
         ]);
 
-        Alert::success('PRESENSI BERHASIL', 'Anda berhasil mengisi data presensi');
+        Alert::success('PRESENSI BERHASIL', 'Anda berhasil mengisi data presensi, jangan lupa mengisi jam keluar ya!');
         return redirect()->to('pegawai');
     }
 

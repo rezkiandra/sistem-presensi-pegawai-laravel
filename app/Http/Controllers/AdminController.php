@@ -8,6 +8,7 @@ use App\Models\Presensi;
 use App\Charts\AdminChart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -105,6 +106,10 @@ class AdminController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $pegawai = Pegawai::findOrFail($id);
+        $pegawai->delete();
+
+        Alert::success('HAPUS DATA BERHASIL', 'Data Pegawai berhasil dihapus');
+        return redirect()->to('admin/pegawai');
     }
 }
