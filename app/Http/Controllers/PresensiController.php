@@ -31,7 +31,7 @@ class PresensiController extends Controller
         ]);
 
         Alert::success('PRESENSI BERHASIL', 'Anda berhasil mengisi data presensi');
-        return redirect()->to('pegawai/index');
+        return redirect()->to('pegawai');
     }
 
     public function show(string $id)

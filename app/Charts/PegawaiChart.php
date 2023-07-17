@@ -41,7 +41,7 @@ class PegawaiChart
                     ->groupBy('tanggal')
                     ->whereRaw('pegawai_id = ?', Auth::user()->id)
                     ->whereRaw('keterangan = ?', 'Hadir')
-                    ->whereRaw('DATE(created_at) < ?', [date('Y-m-d', strtotime('-1 days'))])
+                    ->whereRaw('DATE(created_at) <= ?', [date('Y-m-d', strtotime('-1 days'))])
                     ->orderBy('tanggal', 'ASC')
                     ->get()
                     ->count(),
@@ -79,7 +79,7 @@ class PegawaiChart
                     ->groupBy('tanggal')
                     ->whereRaw('pegawai_id = ?', Auth::user()->id)
                     ->whereRaw('keterangan = ?', 'Sakit')
-                    ->whereRaw('DATE(created_at) < ?', [date('Y-m-d', strtotime('-1 days'))])
+                    ->whereRaw('DATE(created_at) <= ?', [date('Y-m-d', strtotime('-1 days'))])
                     ->orderBy('tanggal', 'ASC')
                     ->get()
                     ->count(),
@@ -117,7 +117,7 @@ class PegawaiChart
                     ->groupBy('tanggal')
                     ->whereRaw('pegawai_id = ?', Auth::user()->id)
                     ->whereRaw('keterangan = ?', 'Izin')
-                    ->whereRaw('DATE(created_at) < ?', [date('Y-m-d', strtotime('-1 days'))])
+                    ->whereRaw('DATE(created_at) >= ?', [date('Y-m-d', strtotime('-1 days'))])
                     ->orderBy('tanggal', 'ASC')
                     ->get()
                     ->count(),
@@ -155,7 +155,7 @@ class PegawaiChart
                     ->groupBy('tanggal')
                     ->whereRaw('pegawai_id = ?', Auth::user()->id)
                     ->whereRaw('keterangan = ?', 'Alpa')
-                    ->whereRaw('DATE(created_at) < ?', [date('Y-m-d', strtotime('-1 days'))])
+                    ->whereRaw('DATE(created_at) <= ?', [date('Y-m-d', strtotime('-1 days'))])
                     ->orderBy('tanggal', 'ASC')
                     ->get()
                     ->count(),

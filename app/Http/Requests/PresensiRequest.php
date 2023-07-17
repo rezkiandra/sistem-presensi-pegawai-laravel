@@ -6,23 +6,28 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PresensiRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
-     */
     public function rules(): array
     {
         return [
-            //
+            'tanggal_presensi'  => 'required|date',
+            'keterangan'        => 'required',
+            'jam_masuk'         => 'required_if:keterangan,Hadir',
+            'jam_keluar'        => 'required_if:jam_masuk,true',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'tanggal_presensi.required' => 'Tanggal presensi wajib diisi',
+            'tanggal_presensi.date'     => 'Tanggal harus dalam format dd/mm/yyyy',
+            'keterangan.required'       => 'Keterangan wajib diisi',
+            'jam_masuk.required_if'     => 'Jam masuk wajib diisi',
         ];
     }
 }
